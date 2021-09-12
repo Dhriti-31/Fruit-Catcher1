@@ -1,13 +1,10 @@
 class Game{
-    constructor(){
-
-    }
+    constructor(){};
     getState() {
         var gameStateRef = database.ref('gameState');
         gameStateRef.on("value", function (data) {
             gameState = data.val();
         })
-
     }
 
     update(state) {
@@ -15,6 +12,7 @@ class Game{
             gameState: state
         });
     }
+    
     async start() {
             if (gameState === 0) {
                 player = new Player();
@@ -78,13 +76,13 @@ class Game{
                      switch(rand){
                          case 1: fruits.addImage("fruit1",fruit1_img);
                          break;
-                         case 2: fruits.addImage("fruit1", fruit2_img);
+                         case 2: fruits.addImage("fruit2", fruit2_img);
                          break;
-                         case 3: fruits.addImage("fruit1", fruit3_img);
+                         case 3: fruits.addImage("fruit3", fruit3_img);
                          break;
-                         case 4: fruits.addImage("fruit1", fruit4_img);
+                         case 4: fruits.addImage("fruit4", fruit4_img);
                          break;
-                         case 5: fruits.addImage("fruit1", fruit5_img);
+                         case 5: fruits.addImage("fruit5", fruit5_img);
                          break;
                      }
                      fruitGroup.add(fruits);
